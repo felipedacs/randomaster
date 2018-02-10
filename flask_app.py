@@ -4,7 +4,7 @@ from flask import Flask, render_template
 
 from listakros import ListKros
 
-lista = ListKros('arquivos', 'krosmaster')
+lista = ListKros('static', 'krosmaster')
 lista.cria_list()
 
 app = Flask(__name__)
