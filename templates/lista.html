@@ -1,0 +1,24 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+<table class="table">
+	<tr>
+	{% for header in headers %}
+		<th>
+			{{ header }}
+		</th>
+	{% endfor %}
+	</tr>
+	{% for content in contents %}
+	<tr>
+
+		{% for data in range(datas) %}
+		<td>
+			{{ content[data] }}
+		</td>
+		{% endfor %}
+
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

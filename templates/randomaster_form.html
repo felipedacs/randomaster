@@ -1,0 +1,42 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<form class="form">
+	<legend>Codigo Bash de randomaster</legend>
+	<div class="form-group">
+		<label class="col-form-label" for="bash_id">Bash</label>
+		<textarea class="form-control" placeholder="Default input" id="bash_id" name="bash_id"></textarea>
+		
+	</div>
+	<div class="form-group">
+		<button type="button" class="btn btn-info">Enviar Bash Código</button>
+	</div>
+</form>
+
+<form class="form">
+	<legend>Formulario de randomaster</legend>
+	{% for content in contents %}
+	<div class="custom-control custom-checkbox personagem-div card" style="max-width: 20rem;">
+		<div class="nome_class" style="display: none">{{ content['nome_class'] }}</div>
+		<div class="nome">{{ content['nome'] }} (<span class="{{ content['nome_class'] }}_total_user">0</span>)</div>
+		<a href="" class="btn-outline-danger gridBotoes rem"><i class="fas fa-minus-square"></i></a>
+
+		<div class="gridImg">
+			<img src="/static/{{ content['nome'] }}.png" alt="{{ content['nome'] }}">
+		</div>
+		<a href="" class="btn-outline-success gridBotoes add"><i class="fas fa-plus-square"></i></a>
+	</div>
+	{% endfor %}
+	<pre>
+		[
+		{% for content in contents %}
+		{'nome': '{{ content['nome'] }}, 'total': '<span class="{{ content['nome_class'] }}_total">0</span>'}, 
+		{% endfor %}
+		]
+	</pre>
+	<div class="form-group">
+		<button type="button" class="btn btn-info">Enviar Formulário Inicial</button>
+	</div>
+</form>
+<script src="{{url_for('static', filename='jquery.js')}}"></script>
+<script src="{{url_for('static', filename='bash_form.js')}}"></script>
+{% endblock %}
