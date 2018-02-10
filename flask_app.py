@@ -1,4 +1,7 @@
-#  /home/felipedacs/mysite/static
+#  rotinas python anywhere
+
+#  lista = ListKros('/home/felipedacs/mysite/static', 'krosmaster')
+#  app.run(debug=True)
 
 from flask import Flask, render_template
 
