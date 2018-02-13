@@ -1,42 +1,139 @@
 {% extends "template.html" %}
 {% block conteudo %}
-<form class="form">
-	<legend>Codigo Bash de randomaster</legend>
-	<div class="form-group">
-		<label class="col-form-label" for="bash_id">Bash</label>
-		<textarea class="form-control" placeholder="Default input" id="bash_id" name="bash_id"></textarea>
-		
-	</div>
-	<div class="form-group">
-		<button type="button" class="btn btn-info">Enviar Bash Código</button>
-	</div>
-</form>
-
-<form class="form">
-	<legend>Formulario de randomaster</legend>
-	{% for content in contents %}
-	<div class="custom-control custom-checkbox personagem-div card" style="max-width: 20rem;">
-		<div class="nome_class" style="display: none">{{ content['nome_class'] }}</div>
-		<div class="nome">{{ content['nome'] }} (<span class="{{ content['nome_class'] }}_total_user">0</span>)</div>
-		<a href="" class="btn-outline-danger gridBotoes rem"><i class="fas fa-minus-square"></i></a>
-
-		<div class="gridImg">
-			<img src="/static/{{ content['nome'] }}.png" alt="{{ content['nome'] }}">
+<button class="btn-outline-success btn-lg btn-block" id="btn-bash-div"><i class="fas fa-barcode"></i> Bash Randomaster</button>
+<div class="bash-div">
+	<form class="form" class="form" action="{{ url_for('equipe') }}" method="post">
+		<div class="form-group">
+			<table class="table">
+				Tipo de formação
+				<tr>
+					<td class="td-tipo">
+						<div class="form-check" style="padding: 0px">
+							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="livre" checked="">Livre</label>
+						</div>
+					</td>
+					<td class="td-tipo">
+						<div class="form-check" style="padding: 0px">
+							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="star_um"><i class="fas fa-star"></i></label>
+						</div>
+					</td>
+					<td class="td-tipo">
+						<div class="form-check" style="padding: 0px">
+							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="star_dois"><i class="fas fa-star"></i><i class="fas fa-star"></i></label>
+						</div>
+					</td>
+					<td class="td-tipo">
+						<div class="form-check" style="padding: 0px">
+							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="star_tres"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></label>
+						</div>
+					</td>
+					<td class="td-tipo">
+						<div class="form-check" style="padding: 0px">
+							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="season">Season</label>
+						</div>
+					</td>
+				</tr>
+			</table>
 		</div>
-		<a href="" class="btn-outline-success gridBotoes add"><i class="fas fa-plus-square"></i></a>
-	</div>
-	{% endfor %}
-	<pre>
-		[
+		<div class="form-group">
+			<label for="qtd_times">Quantidade de times</label>
+			<select class="form-control" id="qtd_times">
+				<option value="1" selected>1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="col-form-label" for="bash_id">Bash</label>
+			<input type="text" name="input_codigo" class="form-control" placeholder="Cole aqui o código da sua coleção" id="codigo_clip">
+			<small>Exemplo: guy_yermetel,oscar_nyo,merty_olat,makum_bah,oscar_nyo</small>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-success"><i class="fas fa-check-square"></i> Enviar Bash</button>
+		</div>
+	</form>
+</div>
+<hr>
+<button class="btn-outline-success btn-lg btn-block" id="btn-form-div"><i class="far fa-minus-square"></i> <i class="far fa-plus-square"></i> Formulário Randomaster</button>
+<div class="form-div">
+	<form class="form" action="{{ url_for('equipe') }}" method="post">
+		<div class="form-group">
+			<table class="table">
+				Tipo de formação
+				<tr>
+					<td class="td-tipo">
+						<div class="form-check" style="padding: 0px">
+							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="livre" checked="">Livre</label>
+						</div>
+					</td>
+					<td class="td-tipo">
+						<div class="form-check" style="padding: 0px">
+							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="star_um"><i class="fas fa-star"></i></label>
+						</div>
+					</td>
+					<td class="td-tipo">
+						<div class="form-check" style="padding: 0px">
+							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="star_dois"><i class="fas fa-star"></i><i class="fas fa-star"></i></label>
+						</div>
+					</td>
+					<td class="td-tipo">
+						<div class="form-check" style="padding: 0px">
+							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="star_tres"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></label>
+						</div>
+					</td>
+					<td class="td-tipo">
+						<div class="form-check" style="padding: 0px">
+							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="season">Season</label>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="form-group">
+			<label for="qtd_times">Quantidade de times</label>
+			<select class="form-control" id="qtd_times">
+				<option value="1" selected>1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select>
+		</div>
 		{% for content in contents %}
-		{'nome': '{{ content['nome'] }}, 'total': '<span class="{{ content['nome_class'] }}_total">0</span>'}, 
+		<div class="custom-control custom-checkbox personagem-div card" style="max-width: 20rem;">
+			<div class="nome_class" style="display: none">{{ content['nome_class'] }}</div>
+			<div class="nome">{{ content['nome'] }} (<span class="{{ content['nome_class'] }}_total">0</span>)</div>
+			<a href="" class="btn-outline-danger gridBotoes rem"><i class="fas fa-minus-square"></i></a>
+
+			<div class="gridImg">
+				<img src="/static/{{ content['nome'] }}.png" alt="{{ content['nome'] }}">
+			</div>
+			<a href="" class="btn-outline-success gridBotoes add"><i class="fas fa-plus-square"></i></a>
+		</div>
 		{% endfor %}
-		]
-	</pre>
-	<div class="form-group">
-		<button type="button" class="btn btn-info">Enviar Formulário Inicial</button>
-	</div>
-</form>
+		<input style="visibility: hidden;" type="text" name="input_codigo" id="input_codigo" value="">
+
+		<div class="form-group">
+			<button type="submit" class="btn btn-success"><i class="fas fa-check-square"></i> Enviar Formulário</button>
+		</div>
+	</form>
+</div>
 <script src="{{url_for('static', filename='jquery.js')}}"></script>
-<script src="{{url_for('static', filename='bash_form.js')}}"></script>
+<script src="{{url_for('static', filename='randomaster_form.js')}}"></script>
 {% endblock %}

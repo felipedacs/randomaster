@@ -1,23 +1,25 @@
 {% extends "template.html" %}
 {% block conteudo %}
-<table class="table">
-	<tr>
-	{% for header in headers %}
-		<th>
-			{{ header }}
-		</th>
-	{% endfor %}
-	</tr>
-	{% for content in contents %}
-	<tr>
 
-		{% for data in range(datas) %}
-		<td>
-			{{ content[data] }}
-		</td>
-		{% endfor %}
+<div class="card text-white bg-success mb-3 hello-card">
+  <div class="card-header">SUGESTÕES</div>
+  <div class="card-body">
+    <p class="card-text">Para duvidas, críticas e sugestões favor escrever <a href="http://felipedacs.pythonanywhere.com/coment">nesta</a> página.</p>
+    <small class="card-text">Todas mensagens são publicas porém apagadas a cada reinicio do servidor.</small>
+  </div>
+</div>
 
-	</tr>
-	{% endfor %}
-</table>
+
+<div class="card text-white bg-info mb-3 randomaster-card">
+  <div class="card-header">RANDOMASTER</div>
+  <div class="card-body">
+    <h5 class="card-title">Explicação:</h4>
+    <p class="card-text">WebApp de randomização para times de krosmaster.</p>
+
+    <h5 class="card-title">Créditos:</h4>
+    <p class="card-text">Lógica, ux e desenvolvimento: Felipe Dacs</p>
+
+    <a href="http://felipedacs.pythonanywhere.com/randomaster" class="btn btn-outline-primary">Acessar</a>
+  </div>
+</div>
 {% endblock %}

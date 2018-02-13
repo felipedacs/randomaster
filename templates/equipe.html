@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<div class="form-group">
+	<!--http://felipedacs.pythonanywhere.com/randomaster-->
+	<a href="http://127.0.0.1:5000/randomaster" class="btn btn-warning btn-lg"><i class="fas fa-arrow-circle-left"></i> Voltar</a>
+	<button class="btn btn-danger btn-lg" id="btn-refresh"><i class="fas fa-sync-alt"></i> Nova Randomização</button>
+</div>
+
+<ul>
+	{% for krosmaster in lista_krosmasters %}
+
+	<li>{{ krosmaster }}</li>
+
+	{% endfor %}
+</ul>
+<div class="form-group">
+	<button class="btn btn-success btn-lg" id="btn-copy"><i class="fas fa-barcode"></i> Copiar Código da Coleção</button>
+	<input type="text" name="codigo_clip" id="codigo_clip" value="{{ codigo }}">
+</div>
+
+<script src="{{url_for('static', filename='jquery.js')}}"></script>
+<script src="{{url_for('static', filename='codigo_clip.js')}}"></script>
+{% endblock %}

@@ -23,7 +23,7 @@ class ListKros:
                 for header in self.__headers:
                     dictio[header] = row[i]
                     i += 1
-                dictio['nome_class'] = dictio['nome'].replace(" ", "_")
+                dictio['nome_class'] = dictio['nome'].replace(" ", "_").lower()
                 self.__contents.append(dictio)
         file.close()
 

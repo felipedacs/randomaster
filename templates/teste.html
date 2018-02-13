@@ -1,0 +1,11 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+{{ listateste }}
+<br>
+{% for escolhido in escolhidos %}
+{{ escolhido }}
+
+{% endfor %}
+
+{% endblock %}
