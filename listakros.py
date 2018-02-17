@@ -21,7 +21,10 @@ class ListKros:
                 dictio = {}
                 i = 0
                 for header in self.__headers:
-                    dictio[header] = row[i]
+                    if header == 'nivel' or header == 'qtd':
+                        dictio[header] = int(row[i])
+                    else:
+                        dictio[header] = row[i]
                     i += 1
                 dictio['nome_class'] = dictio['nome'].replace(" ", "_").lower()
                 self.__contents.append(dictio)

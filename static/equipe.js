@@ -13,3 +13,9 @@ $("#btn-refresh").on('click', function( e ) {
 
 	window.location.reload();
 });
+
+$( "#btn-auditoria-div" ).on('click', function( e ) {
+    e.preventDefault();
+
+    $(".auditoria-div").toggle();
+});

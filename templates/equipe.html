@@ -6,6 +6,25 @@
 	<button class="btn btn-danger btn-lg" id="btn-refresh"><i class="fas fa-sync-alt"></i> Nova Randomização</button>
 </div>
 
+<table class="table">
+{% for time in times_krosmaster %}
+
+	<tr>
+		<th class="table-dark">nome</th>
+		<th class="table-dark">nivel</th>
+	</tr>
+	{% for krosmaster_time in time %}
+	<tr>
+		<td>{{ krosmaster_time['nome'] }}</td>
+		<td>{{ krosmaster_time['nivel'] }}</td>
+	</tr>
+	{% endfor %}
+{% endfor %}
+</table>
+
+
+<!--
+---------------------
 <ul>
 	{% for krosmaster in lista_krosmasters %}
 
@@ -13,11 +32,33 @@
 
 	{% endfor %}
 </ul>
+
+
+
+---------------------
+<ul>
+	{% for time in times_krosmaster %}
+
+	<li>{{ time }}</li>
+
+	{% endfor %}
+</ul>
+-->
 <div class="form-group">
 	<button class="btn btn-success btn-lg" id="btn-copy"><i class="fas fa-barcode"></i> Copiar Código da Coleção</button>
 	<input type="text" name="codigo_clip" id="codigo_clip" value="{{ codigo }}">
 </div>
+<div class="form-group">
+	<button class="btn btn-info btn-lg" id="btn-auditoria-div"><i class="fas fa-terminal"></i> Auditoria</button>
+</div>
 
-<script src="{{url_for('static', filename='jquery.js')}}"></script>
-<script src="{{url_for('static', filename='codigo_clip.js')}}"></script>
+<div class="auditoria-div">
+	<ul type="square">
+	{% for msg in auditoria %}
+		<li>{{ msg }}</li>
+	{% endfor %}
+	</ul>
+</div>
+
+<script src="{{url_for('static', filename='equipe.js')}}"></script>
 {% endblock %}

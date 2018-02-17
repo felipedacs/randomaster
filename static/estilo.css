@@ -4,15 +4,12 @@
 .form-div{
 	display: none;
 }
-
-.td-tipo{
-	padding-right: 0px !important;
-	padding-left: 0px !important;
-	border-top: 0px !important;
-}
-
-.fa-star{
-	color: #DBEF29;
+.auditoria-div{
+	display: none;
+	font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+	font-weight: normal;
+	background-color: #F2F2F6;
+	color: #DE962B;
 }
 
 .hello-card{
@@ -25,7 +22,7 @@
 
 .personagem-div{
 	display: inline-block;
-	width: 12%;
+	width: 16%;
 	overflow: hidden;
 	text-align: center;
 }

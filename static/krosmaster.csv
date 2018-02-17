@@ -1,15 +1,156 @@
-nome,nivel,boss,qtd,ban
-Guy Yermetel,3,false,2,false
-Oscar Nyo,3,false,2,false
-Merty Olat,3,false,1,false
-Makum Bah,4,false,2,false
-Merkator,6,true,1,false
-Rib Ombar,3,false,2,false
-Zorbalo Greg,2,false,2,false
-Klor Ofil,2,false,2,true
-Srammy,2,false,2,false
-Quentin Flush,2,false,2,false
-Day Kiri,1,false,1,false
-Koa Gullar,1,false,2,false
-Ostron Doz,2,false,2,false
-Henual,2,true,1,true
+nome,eternal,season,nivel,qtd,ban_season,boss_season,boss_eternal
+Argon Gass,2,1,3,1,,,
+Amalia,1,1,3,1,,,
+Evangelyne,1,1,3,1,,,
+Nox,3,1,6,1,,,
+Ruel Stroud,1,1,3,1,,,
+Percedal,1,1,3,1,,,
+Yugo,2,1,3,1,,,
+Gui Yermetel,2,1,3,2,,,
+Merty Olat,1,1,3,2,,,
+Rib Ombar,1,1,3,2,,,
+Ana Tomya,2,1,3,2,,,
+Oscar Nyo,1,1,3,2,,,
+Kreol Panikon,2,1,3,2,,,
+Rainha dos Tofus,2,1,3,1,,,
+Rei dos Papatudos,2,1,3,1,,,
+Jems Blond,1,1,4,2,,,
+Luk Ylook,3,1,2,1,,,
+Dani O Shun,2,1,4,2,,,
+Naz Rael,1,1,2,1,,,
+Quentin Flush,2,1,1,2,,,
+Aly Zelo,2,1,4,2,,,
+Day Kiri,1,1,1,1,,,
+Gultar,3,1,6,1,,,
+Remington Smisse,2,1,5,1,,,
+Ostron Doz,1,1,2,2,,,
+Koa Gullar,3,1,1,2,,,
+Globina,1,1,4,1,,,
+Klor Ofil,3,1,2,2,,,
+Liana Bela,2,1,1,1,,,
+Makum Bah,2,1,4,2,,,
+Srammy,1,1,2,2,,,
+Fraktor,2,1,4,1,,,
+Zorbalo Greg,1,1,2,2,,,
+Victor don Voom,2,1,5,1,,,
+Percimol,2,1,5,1,,,
+Shak Shaka,2,1,5,1,,,
+Darkness Knight,2,1,6,1,,,
+Cloud Knight,2,1,3,1,,,
+Drop Knight,1,1,3,1,,,
+Flame Knight,2,1,3,1,,,
+Leaf Knight,1,1,3,1,,,
+Goultard the Barbarian,2,1,6,1,,,
+Conde Traspafrent,2,1,6,1,,boss,boss
+Conde Frigost,2,1,6,1,,boss,boss
+Captain Amakna,2,1,6,1,,boss,boss
+Merkator,3,1,6,1,,boss,boss
+Krobax,2,1,2,3,,,
+Beelzebug,1,1,2,3,,,
+Skale,2,1,2,3,,,
+Trank,1,1,2,3,,,
+Lumino,2,1,2,3,,,
+Shadow,1,1,2,3,,,
+Miauvo,1,2,4,1,,,
+Joris,1,2,2,1,,,
+Kerubim Crepim,2,2,4,1,,,
+Lou,1,2,2,1,,,
+Terminatot Wakfu,1,2,3,1,,,
+Terminatot Estase,1,2,3,1,,boss,boss
+Terminatot Gold,1,2,3,1,,boss,boss
+Elogio,2,2,4,2,,,
+Jordy Ritante,1,2,2,2,,,
+Ary Saf,1,2,5,1,,,
+Raul Bek,2,2,3,2,,,
+Henual,3,2,2,2,ban,,
+Jeyro Rello,3,2,1,1,,,
+Katsou Mee,1,2,3,2,,,
+Kitty Rage,3,2,5,2,,boss,
+Emma Sacre,3,2,4,1,,,
+Bade Barjosa,2,2,3,2,,,
+Mercedes Ligga,2,2,4,2,,,
+Steamy Wonder,3,2,1,1,,,
+Diver Birel,2,2,3,2,,,
+Barden Tadura,3,2,1,2,,,
+Assai Dahy,3,2,4,1,,boss,
+Pandaysa,2,2,3,2,,,
+Mali Buh,3,2,5,2,,,
+Poochan,3,2,1,1,ban,,
+Elgward Haporta,1,2,2,2,,,
+Wally Faier,1,2,1,2,,,
+Duque Rex,3,2,5,1,,,
+Ayan,2,2,2,2,,,
+Kivin,3,2,1,2,,,
+Thio,3,2,4,1,ban,,
+Gein,3,2,6,1,,,
+Adamai,2,2,3,1,,,
+Qilby,2,2,6,1,,,
+Riktus de Amakna,1,2,2,3,,,
+Riktus de Bonta,1,2,2,3,,,
+Riktus de Sufokia,1,2,2,3,,,
+Riktus de Brakmar,1,2,2,3,,,
+Riktus de Elite,2,2,4,2,,,
+Mytik Tak,2,2,3,1,,,
+Vams Haluta,1,2,3,1,,,
+Jenna Paca,2,2,3,1,,,
+Kav Ukar,2,2,3,1,,,
+Qilby Traidor,2,2,6,1,,boss,boss
+Yugo Jovem Rei,2,2,4,1,,,
+Adamai Dragao,2,2,3,1,,,
+Faeris Derrotado,3,2,1,1,,boss,
+Cleofe,3,2,2,1,,,
+Tristepan Tristemonio,1,2,5,1,,,
+Arthur Bina,3,2,3,1,ban,,
+Rainha dos Ladroes,2,2,4,1,,boss,boss
+Rei Nidas,1,2,4,1,,boss,boss
+Djaul,3,3,1,1,,boss,
+Dark Vlad,2,3,2,1,,,
+Kriss o Krasso,2,3,3,1,,,
+Corvo Negro,3,3,4,1,,boss,
+Vampyro,2,3,5,1,,boss,boss
+Katar,3,3,6,1,,,
+Kanibola Arqueiro,1,3,1,2,,,
+Kanibola Sarbak,1,3,1,2,,,
+Kanibola Jav,1,3,2,2,,,
+Kanibola Thierry,1,3,2,1,,,
+Kanibola Phora,2,3,3,1,,,
+Moon,1,3,5,1,,boss,boss
+Dragoeth o Pensador,2,3,2,2,,,
+Dralegre a Contente,1,3,3,2,,,
+Dragosa,2,3,4,2,,,
+Crocabulia,1,3,5,1,,boss,boss
+Omanetta,2,3,2,2,,,
+Boomba,1,3,1,1,,,
+Ben o Ripata,2,3,4,1,,,
+Deminobola,1,3,3,2,,,
+Minotoror,1,3,4,1,,boss,boss
+Otomai,2,3,6,1,,,
+Dark Vlad Enkarnado,1,3,3,1,,,
+Yugo Enfurecido,1,3,5,1,,,
+Ogrest Criança,1,3,1,1,,,
+Arty,1,3,3,1,,,
+Joris Mestre,1,3,3,1,,,
+Grugaloragran Idoso,1,3,1,1,,boss,boss
+Miauvo Comerciante,2,3,3,1,,,
+Darkli Moon,2,3,2,1,,,
+Tube Samurai,ban,3,3,1,ban,,
+Nemesis Samurai,ban,3,2,1,ban,,
+Tofu Real,1,3,3,1,,boss,boss
+Papatudo Real,2,3,3,1,,boss,boss
+O Tchuke,1,3,5,1,,boss,boss
+Anathar,3,4,5,1,,boss,boss
+Justice Knight Jr,3,4,3,1,,,
+Julith,3,4,4,1,ban,,
+Lilota,1,4,2,1,,,
+Marline,1,4,2,1,,,
+Miauvo Protetor,2,4,4,1,,,
+Joris Espadachim,2,4,2,1,,,
+Jahash,2,4,4,1,,boss,boss
+Khan Karkass,3,4,2,1,,,
+Bakara,3,4,4,1,,,
+Percimol Controlled,2,4,3,1,,,
+Ush,3,4,4,1,,,
+Remington Smisse Mercenary,2,4,4,1,,,
+Yugo Exalted,3,4,4,1,,,
+Maskemane Psychopath,2,4,1,1,,,
+Atcham,2,4,2,1,,,

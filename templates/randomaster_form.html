@@ -4,57 +4,26 @@
 <div class="bash-div">
 	<form class="form" class="form" action="{{ url_for('equipe') }}" method="post">
 		<div class="form-group">
-			<table class="table">
-				Tipo de formação
-				<tr>
-					<td class="td-tipo">
-						<div class="form-check" style="padding: 0px">
-							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="livre" checked="">Livre</label>
-						</div>
-					</td>
-					<td class="td-tipo">
-						<div class="form-check" style="padding: 0px">
-							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="star_um"><i class="fas fa-star"></i></label>
-						</div>
-					</td>
-					<td class="td-tipo">
-						<div class="form-check" style="padding: 0px">
-							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="star_dois"><i class="fas fa-star"></i><i class="fas fa-star"></i></label>
-						</div>
-					</td>
-					<td class="td-tipo">
-						<div class="form-check" style="padding: 0px">
-							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="star_tres"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></label>
-						</div>
-					</td>
-					<td class="td-tipo">
-						<div class="form-check" style="padding: 0px">
-							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="season">Season</label>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-		<div class="form-group">
-			<label for="qtd_times">Quantidade de times</label>
-			<select class="form-control" id="qtd_times">
-				<option value="1" selected>1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="12">12</option>
+			<label for="classificacao">Quantidade de times</label>
+			<select class="form-control" id="classificacao" name="classificacao">
+				<option value="um">&#9733</option>
+				<option value="dois">&#9733 &#9733</option>
+				<option value="tres">&#9733 &#9733 &#9733</option>
+				<option value="season">Season</option>
 			</select>
 		</div>
 		<div class="form-group">
-			<label class="col-form-label" for="bash_id">Bash</label>
-			<input type="text" name="input_codigo" class="form-control" placeholder="Cole aqui o código da sua coleção" id="codigo_clip">
+			<label for="qtd_times_um">Quantidade de times</label>
+			<select class="form-control" id="qtd_times_um" name="qtd_times">
+				<option value="1">1</option>
+				<option value="2" selected>2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="col-form-label">Bash</label>
+			<input type="text" name="input_codigo" class="form-control" placeholder="Cole aqui o código da sua coleção" id="codigo_clip" value="gui_yermetel,oscar_nyo,merty_olat,rib_ombar,merkator,gui_yermetel,oscar_nyo,merty_olat,rib_ombar,merkator">
 			<small>Exemplo: guy_yermetel,oscar_nyo,merty_olat,makum_bah,oscar_nyo</small>
 		</div>
 		<div class="form-group">
@@ -67,52 +36,21 @@
 <div class="form-div">
 	<form class="form" action="{{ url_for('equipe') }}" method="post">
 		<div class="form-group">
-			<table class="table">
-				Tipo de formação
-				<tr>
-					<td class="td-tipo">
-						<div class="form-check" style="padding: 0px">
-							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="livre" checked="">Livre</label>
-						</div>
-					</td>
-					<td class="td-tipo">
-						<div class="form-check" style="padding: 0px">
-							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="star_um"><i class="fas fa-star"></i></label>
-						</div>
-					</td>
-					<td class="td-tipo">
-						<div class="form-check" style="padding: 0px">
-							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="star_dois"><i class="fas fa-star"></i><i class="fas fa-star"></i></label>
-						</div>
-					</td>
-					<td class="td-tipo">
-						<div class="form-check" style="padding: 0px">
-							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="star_tres"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></label>
-						</div>
-					</td>
-					<td class="td-tipo">
-						<div class="form-check" style="padding: 0px">
-							<label class="form-check-label"><input type="radio" class="form-check-input" name="tipo_time" value="season">Season</label>
-						</div>
-					</td>
-				</tr>
-			</table>
+			<label for="classificacao">Quantidade de times</label>
+			<select class="form-control" id="classificacao" name="classificacao">
+				<option value="um">&#9733</option>
+				<option value="dois">&#9733 &#9733</option>
+				<option value="tres">&#9733 &#9733 &#9733</option>
+				<option value="season">Season</option>
+			</select>
 		</div>
 		<div class="form-group">
-			<label for="qtd_times">Quantidade de times</label>
-			<select class="form-control" id="qtd_times">
-				<option value="1" selected>1</option>
-				<option value="2">2</option>
+			<label for="qtd_times_um">Quantidade de times</label>
+			<select class="form-control" id="qtd_times_um" name="qtd_times">
+				<option value="1">1</option>
+				<option value="2" selected>2</option>
 				<option value="3">3</option>
 				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="12">12</option>
 			</select>
 		</div>
 		{% for content in contents %}
@@ -134,6 +72,6 @@
 		</div>
 	</form>
 </div>
-<script src="{{url_for('static', filename='jquery.js')}}"></script>
+
 <script src="{{url_for('static', filename='randomaster_form.js')}}"></script>
 {% endblock %}
