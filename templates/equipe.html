@@ -6,57 +6,50 @@
 	<button class="btn btn-danger btn-lg" id="btn-refresh"><i class="fas fa-sync-alt"></i> Nova Randomização</button>
 </div>
 
-<table class="table">
-{% for time in times_krosmaster %}
 
+{% for time in times %}
+<table class="table">
 	<tr>
 		<th class="table-dark">nome</th>
 		<th class="table-dark">nivel</th>
 	</tr>
-	{% for krosmaster_time in time %}
+	{% for krosmaster in time.krosmasters %}
 	<tr>
-		<td>{{ krosmaster_time['nome'] }}</td>
-		<td>{{ krosmaster_time['nivel'] }}</td>
+		<td>{{ krosmaster['nome'] }}</td>
+		<td>{{ krosmaster['nivel'] }}</td>
 	</tr>
 	{% endfor %}
-{% endfor %}
 </table>
-
-
-<!--
----------------------
-<ul>
-	{% for krosmaster in lista_krosmasters %}
-
-	<li>{{ krosmaster }}</li>
-
-	{% endfor %}
-</ul>
-
-
-
----------------------
-<ul>
-	{% for time in times_krosmaster %}
-
-	<li>{{ time }}</li>
-
-	{% endfor %}
-</ul>
--->
-<div class="form-group">
-	<button class="btn btn-success btn-lg" id="btn-copy"><i class="fas fa-barcode"></i> Copiar Código da Coleção</button>
-	<input type="text" name="codigo_clip" id="codigo_clip" value="{{ codigo }}">
+<div class="form-group div-div-composit">
+	<button class="btn btn-info btn-lg btn-composit"><i class="fas fa-users"></i> Composição</button>
+	<div class="div-composit" style="background-image: url('/static/{{ background }}.jpg')">
+		{% for krosmaster in time.krosmasters %}
+		<img src="/static/{{ krosmaster['nome'] }}.png" class="img-composit" alt="{{ krosmaster['nome'] }}">
+		{% endfor %}
+	</div>
 </div>
+{% endfor %}
+
+
+<div class="alert alert-dismissible alert-success">
+	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	<i class="fas fa-lightbulb"></i>
+	<u>Copie</u> e <u>salve o código abaixo em um bloco de notas</u> para evitar preencher o formulário novamente quando revisitar o site.
+	<div class="form-group">
+		<input type="text" name="codigo_clip" style="width: 100%;" id="codigo_clip" value="{{ codigo }}">
+		<button class="btn btn-success btn-lg" id="btn-copy"><i class="fas fa-barcode"></i> Copy</button>
+	</div>
+</div>
+
 <div class="form-group">
 	<button class="btn btn-info btn-lg" id="btn-auditoria-div"><i class="fas fa-terminal"></i> Auditoria</button>
 </div>
 
 <div class="auditoria-div">
-	<ul type="square">
-	{% for msg in auditoria %}
+	<ul type="square" style="padding-left:  25px;">
+		{% for msg in auditoria %}
 		<li>{{ msg }}</li>
-	{% endfor %}
+		{% endfor %}
 	</ul>
 </div>
 

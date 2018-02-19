@@ -4,12 +4,27 @@
 .form-div{
 	display: none;
 }
+.div-composit{
+	display: none;
+	padding-bottom: 3%;
+}
+.div-div-composit{
+	background-color: white;
+}
+.img-composit{
+	width: 13%;
+}
 .auditoria-div{
 	display: none;
 	font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
 	font-weight: normal;
+	font-size: .8rem !important;
 	background-color: #F2F2F6;
 	color: #DE962B;
+}
+
+.ul-auditoria{
+	padding-left: 5% !important;
 }
 
 .hello-card{

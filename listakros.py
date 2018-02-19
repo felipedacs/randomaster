@@ -9,7 +9,9 @@ class ListKros:
         self.__dir = dir
         self.__filename = filename
 
-    def cria_list(self):
+        self.__cria_list()
+
+    def __cria_list(self):
         file = open(self.__dir + '/' + self.__filename + '.csv', 'r')
 
         handle = csv.reader(file)

@@ -19,3 +19,9 @@ $( "#btn-auditoria-div" ).on('click', function( e ) {
 
     $(".auditoria-div").toggle();
 });
+
+$( ".btn-composit" ).on('click', function( e ) {
+    e.preventDefault();
+
+    $(this).closest( "div" ).children("div.div-composit").toggle();
+});
