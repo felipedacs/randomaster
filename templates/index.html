@@ -2,10 +2,25 @@
 {% block conteudo %}
 
 <div class="card text-white bg-success mb-3 hello-card">
-  <div class="card-header">SUGESTÕES</div>
+  <div class="card-header">CONTATO</div>
   <div class="card-body">
-    <p class="card-text">Para duvidas, críticas e sugestões favor escrever <a href="http://felipedacs.pythonanywhere.com/coment">nesta</a> página.</p>
-    <small class="card-text">Todas mensagens são publicas porém apagadas a cada reinicio do servidor.</small>
+    <p class="card-text">Para duvidas, críticas e sugestões, favor escreva abaixo. O feedback é importante!</p>
+    <form method="POST" action="{{ url_for('leia') }}">
+      <div class="form-group">
+        <input type="text" name="resposta" class="form-control" placeholder="O que tem a dizer?" required>
+        <input type="hidden" name="acao" value="escritura">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-outline-primary"></i> Enviar</button>
+      </div>
+    </form>
+    <form method="POST" action="{{ url_for('leia') }}">
+      <div class="form-group">
+        <input type="hidden" name="acao" value="leitura">
+        <button type="submit" class="btn btn-outline-primary"></i> Ler</button>
+      </div>
+    </form>
+    <small class="card-text">Todas mensagens são públicas e apagadas a cada reinicio do servidor.</small>
   </div>
 </div>
 
@@ -14,13 +29,13 @@
   <div class="card-header">RANDOMASTER</div>
   <div class="card-body">
     <h5 class="card-title">Explicação:</h4>
-    <p class="card-text">WebApp de randomização para times de krosmaster.</p>
+      <p class="card-text">WebApp de randomização para times de krosmaster.</p>
 
-    <h5 class="card-title">Créditos:</h4>
-    <p class="card-text">Lógica, ux e desenvolvimento: Felipe Dacs</p>
+      <h5 class="card-title">Créditos:</h4>
+        <p class="card-text">Lógica, ux e desenvolvimento: Felipe Dacs</p>
 
-    <a href="http://felipedacs.pythonanywhere.com/randomaster" class="btn btn-outline-primary">Acessar</a>
-  </div>
-</div>
-<script src="{{url_for('static', filename='jquery.js')}}"></script>
-{% endblock %}
+        <a href="http://felipedacs.pythonanywhere.com/randomaster" class="btn btn-outline-primary">Acessar</a>
+      </div>
+    </div>
+    <script src="{{url_for('static', filename='jquery.js')}}"></script>
+    {% endblock %}

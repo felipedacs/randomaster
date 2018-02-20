@@ -12,6 +12,9 @@ from times import TimePadrao, EternalPadrao, EternalUm, EternalDois, EternalTres
 lista = ListKros('static', 'krosmaster')
 backgrounds = ['pattern1', 'pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6', 'pattern7', 'pattern8', 'pattern9', 'pattern10', 'pattern11']
 
+contents_text = ['first']
+contents_tipo = ['success', 'info', 'warning', 'danger', 'primary', 'secondary']
+
 
 def escrever_auditoria(msg, auditoria):
     print(msg)
@@ -52,6 +55,39 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/leia', methods=['POST', 'GET'])
+def leia():
+
+    acao = request.form['acao']
+
+    if acao == 'leitura':
+        print('aaaa')
+        pass
+    else:
+        contents_text.append(request.form['resposta'])
+
+    random.shuffle(contents_text)
+    random.shuffle(contents_tipo)
+
+    return render_template(
+        'leia.html',
+        titulo='Lista de kros',
+        contents=contents_text,
+        tipo=contents_tipo,
+        datas=len(lista.headers)
+    )
+
+
+@app.route('/fale')
+def fale():
+    return render_template(
+        'fale.html',
+        titulo='Lista de kros',
+        contents=lista.contents,
+        datas=len(lista.headers)
+    )
+
+
 @app.route('/randomaster')
 def randomaster():
     return render_template(
@@ -69,35 +105,35 @@ def equipe():
     qtd_times = int(request.form['qtd_times'])
     auditoria = []
 
-    max_tentativas = 33
+    max_tentativas = 5
 
     for e in range(max_tentativas):
         lista_krosmasters = codigo.split(',')
         times = []
         total_times_completos = 0
-
-        auditoria = escrever_auditoria('✍ TENTATIVA DE RANDOMIZAR: {} ✍'.format(e + 1), auditoria)
+        auditoria = escrever_auditoria('╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍', auditoria)
+        auditoria = escrever_auditoria('♻ TENTATIVA DE RANDOM: {} ♻'.format(e + 1), auditoria)
         random.shuffle(lista_krosmasters)
-        auditoria = escrever_auditoria('🔀 Resultado da desordenação: {}'.format(lista_krosmasters), auditoria)
+        auditoria = escrever_auditoria('웃 Resultado da desordenação: {}'.format(lista_krosmasters), auditoria)
 
         lista_krosmasters = retorna_csv_kros(lista_krosmasters)
 
         for t in range(qtd_times):
-            auditoria = escrever_auditoria('_______ TIME NUMERO {} ______'.format(t+1), auditoria)
+            auditoria = escrever_auditoria('______ TIME NUMERO {} _____'.format(t+1), auditoria)
             if classificacao == 'um':
-                time = EternalUm(lista_krosmasters)
+                time = EternalUm(lista_krosmasters, t+1)
             elif classificacao == 'dois':
-                time = EternalDois(lista_krosmasters)
+                time = EternalDois(lista_krosmasters, t+1)
             elif classificacao == 'tres':
-                time = EternalTres(lista_krosmasters)
+                time = EternalTres(lista_krosmasters, t+1)
             elif classificacao == 'season':
-                time = TimeSeason(lista_krosmasters)
+                time = TimeSeason(lista_krosmasters, t+1)
             times.append(time)
             lista_krosmasters = time.fonte_dos_times
             auditoria = converte_auditoria_class(time.msg_auditoria, auditoria)
 
             if time.time_completo:
-                auditoria = escrever_auditoria('✨ SUCESSO! Time completo ✨', auditoria)
+                auditoria = escrever_auditoria('★ SUCESSO! Time completo ★', auditoria)
                 total_times_completos += 1
 
         if qtd_times == total_times_completos:
@@ -122,7 +158,7 @@ def equipe():
         codigo=codigo,
         times=times,
         auditoria=auditoria,
-        background=backgrounds[0]
+        background=backgrounds
     )
 
 

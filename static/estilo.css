@@ -4,15 +4,14 @@
 .form-div{
 	display: none;
 }
-.div-composit{
+.table-equipe{
 	display: none;
-	padding-bottom: 3%;
-}
-.div-div-composit{
-	background-color: white;
 }
 .img-composit{
 	width: 13%;
+}
+.div-composit{
+	padding-bottom: .1%;
 }
 .auditoria-div{
 	display: none;
@@ -21,6 +20,15 @@
 	font-size: .8rem !important;
 	background-color: #F2F2F6;
 	color: #DE962B;
+}
+.titulo-equipe{
+	text-decoration-color: white;
+}
+.p-time{
+	font-size: 200%;
+	color: darkred;
+	letter-spacing: .2rem;
+	text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 
 .ul-auditoria{
@@ -74,23 +82,18 @@
 	.personagem-div{
 		width: 24%;
 	}
-
-	
+	.hello-card{
+		max-width: 100%;
+	}
+	.randomaster-card{
+		max-width: 100%;
+	}
 }
 
 @media (max-width: 450px){
 	.personagem-div{
 		width: 32%;
 	}
-	.hello-card{
-		max-width: 100%;
-	}
-
-	.randomaster-card{
-		max-width: 100%;
-	}
-
-
 }
 
 @media (max-width: 400px){

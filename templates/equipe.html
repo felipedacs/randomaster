@@ -6,27 +6,35 @@
 	<button class="btn btn-danger btn-lg" id="btn-refresh"><i class="fas fa-sync-alt"></i> Nova Randomização</button>
 </div>
 
-
 {% for time in times %}
-<table class="table">
-	<tr>
-		<th class="table-dark">nome</th>
-		<th class="table-dark">nivel</th>
-	</tr>
-	{% for krosmaster in time.krosmasters %}
-	<tr>
-		<td>{{ krosmaster['nome'] }}</td>
-		<td>{{ krosmaster['nivel'] }}</td>
-	</tr>
-	{% endfor %}
-</table>
-<div class="form-group div-div-composit">
-	<button class="btn btn-info btn-lg btn-composit"><i class="fas fa-users"></i> Composição</button>
-	<div class="div-composit" style="background-image: url('/static/{{ background }}.jpg')">
+<section>
+	<div class="form-group">
+		<input type="text" name="" class="form-control input-composit">
+	</div>
+	<div class="form-group div-composit div-foto-{{ time.numero_time }}" style="background-image: url('/static/{{ background[time.numero_time] }}.jpg'); text-align: center; background-size: 15%;">
 		{% for krosmaster in time.krosmasters %}
 		<img src="/static/{{ krosmaster['nome'] }}.png" class="img-composit" alt="{{ krosmaster['nome'] }}">
 		{% endfor %}
+		<br>
+		<p class="p-time"></p>
 	</div>
+</section>
+<div class="form-group">
+	<button class="btn btn-info btn-lg btn-equipe"><i class="fas fa-table"></i></button>
+	<button class="btn btn-success btn-lg btn-foto" value="{{ time.numero_time }}"><i class="fas fa-camera"></i></button>
+	<div class="div-img-foto-{{ time.numero_time }}"></div>
+	<table class="table table-equipe">
+		<tr>
+			<th class="table-dark">nome</th>
+			<th class="table-dark">nivel</th>
+		</tr>
+		{% for krosmaster in time.krosmasters %}
+		<tr>
+			<td>{{ krosmaster['nome'] }}</td>
+			<td>{{ krosmaster['nivel'] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
 </div>
 {% endfor %}
 
@@ -52,6 +60,7 @@
 		{% endfor %}
 	</ul>
 </div>
-
+<div id="img-out"></div>
+<script src="{{url_for('static', filename='html2canvas.js')}}"></script>
 <script src="{{url_for('static', filename='equipe.js')}}"></script>
 {% endblock %}

@@ -2,17 +2,20 @@ from abc import abstractmethod
 
 
 class TimePadrao:
+    numero_time = 0
     time_completo = False
     __time_com_boss = False
     __total_gg = 12
+    total_krosmasters = 0
     __msg_auditoria = []
     __krosmasters = []
     fonte_dos_times = []
 
-    def __init__(self, lista):
+    def __init__(self, lista, numero):
         self.fonte_dos_times = lista
         self.__krosmasters = []
         self.__msg_auditoria = []
+        self.numero_time = numero
         self.monta_time()
 
     def add_msg_auditoria(self, msg):
@@ -34,35 +37,56 @@ class TimePadrao:
                             #   entra boss
                             self.__time_com_boss = True
                             if self.__entra_no_time(i):
-                                pass
+                                self.total_krosmasters += 1
                             else:
                                 i += 1
                     else:
 
                         #   entra não boss
                         if self.__entra_no_time(i):
-                            pass
+                            self.total_krosmasters += 1
                         else:
                              i += 1
                 else:
-                    #   nivel maior que o total de gg
-                    self.add_msg_auditoria(
-                        '❌ {} maior que {}gg'
-                            .format(self.fonte_dos_times[i]['nome'], self.__total_gg))
+                    if self.fonte_dos_times[i]['nivel'] > self.__total_gg:
+                        #   nivel maior que o total de gg
+                        self.add_msg_auditoria(
+                            '❌ {} maior que {}gg'
+                                .format(self.fonte_dos_times[i]['nome'], self.__total_gg))
+                    elif count < self.fonte_dos_times[i]['qtd']:
+                        #   nivel maior que o total de gg
+                        self.add_msg_auditoria(
+                            '❌ {} atingiu o limite {}'
+                                .format(self.fonte_dos_times[i]['nome'], self.fonte_dos_times[i]['qtd']))
                     i += 1
+            if self.total_gg == 0:
+                if self.total_krosmasters > 2 and self.total_krosmasters < 8:
+                    self.time_completo = True
+                else:
+                    raise Exception
         except IndexError:
             self.add_msg_auditoria(
                 '💀 ACABOU A LISTA DOS KROS 💀')
             self.__krosmasters = ['']
-        if self.total_gg == 0:
-            self.time_completo = True
+
+        except Exception:
+            self.add_msg_auditoria(
+                '💀 NUMERO DE KROS ERRADO 💀')
+            self.__krosmasters = ['']
+
+        except BlockingIOError:
+            #   except estranha
+            self.add_msg_auditoria(
+                '💀 BlockingIOError 💀')
+            self.__krosmasters = ['']
+
 
     def __entra_no_time(self, contador):
         if self.__eh_aceitavel(contador):
             self.__krosmasters.append(self.fonte_dos_times[contador])
             self.__total_gg -= self.fonte_dos_times[contador]['nivel']
             self.add_msg_auditoria(
-                '✅ {}. Sobram {}gg'.format(self.fonte_dos_times[contador]['nome'], self.__total_gg))
+                '✔ {}. Sobram {}gg'.format(self.fonte_dos_times[contador]['nome'], self.__total_gg))
             self.fonte_dos_times.remove(self.fonte_dos_times[contador])
             return True
         else:

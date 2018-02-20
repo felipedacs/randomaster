@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+{% for content in contents %}
+
+<div class="card text-white bg-{{ tipo | random}} mb-3 randomaster-card" style="display: inline-block;">
+  <div class="card-body">
+    <p class="card-text">{{ content }}</p>
+  </div>
+</div>
+
+{% endfor %}
+
+
+<script src="{{url_for('static', filename='jquery.js')}}"></script>
+{% endblock %}
