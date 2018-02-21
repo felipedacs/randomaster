@@ -170,7 +170,7 @@ class EternalTres(EternalPadrao):
 
 
 class TimeSeason(TimePadrao):
-    __seasonsAceitas = ['4', '3', '2', '1']
+    __seasonsAceitas = ['4', '3', '2']
 
     def verifica_boss(self, contador):
         if self.fonte_dos_times[contador]['boss_season'] == 'boss':

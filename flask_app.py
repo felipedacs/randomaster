@@ -3,6 +3,8 @@
 #  lista = ListKros('/home/felipedacs/mysite/static', 'krosmaster')
 #  app.run(debug=True)
 
+#  equipe.html: http://felipedacs.pythonanywhere.com/randomaster
+
 from flask import Flask, render_template, request, flash
 import random
 
@@ -57,33 +59,23 @@ def index():
 
 @app.route('/leia', methods=['POST', 'GET'])
 def leia():
-
-    acao = request.form['acao']
-
-    if acao == 'leitura':
-        print('aaaa')
+    try:
+        acao = request.form['acao']
+        if acao == 'leitura':
+            pass
+        else:
+            contents_text.append(request.form['resposta'])
+        random.shuffle(contents_text)
+        random.shuffle(contents_tipo)
+    except BlockingIOError:
+        #   except estranha
         pass
-    else:
-        contents_text.append(request.form['resposta'])
-
-    random.shuffle(contents_text)
-    random.shuffle(contents_tipo)
 
     return render_template(
         'leia.html',
         titulo='Lista de kros',
         contents=contents_text,
         tipo=contents_tipo,
-        datas=len(lista.headers)
-    )
-
-
-@app.route('/fale')
-def fale():
-    return render_template(
-        'fale.html',
-        titulo='Lista de kros',
-        contents=lista.contents,
         datas=len(lista.headers)
     )
 
@@ -111,7 +103,7 @@ def equipe():
         lista_krosmasters = codigo.split(',')
         times = []
         total_times_completos = 0
-        auditoria = escrever_auditoria('╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍', auditoria)
+        auditoria = escrever_auditoria('--------------------------', auditoria)
         auditoria = escrever_auditoria('♻ TENTATIVA DE RANDOM: {} ♻'.format(e + 1), auditoria)
         random.shuffle(lista_krosmasters)
         auditoria = escrever_auditoria('웃 Resultado da desordenação: {}'.format(lista_krosmasters), auditoria)
