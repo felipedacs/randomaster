@@ -53,34 +53,6 @@ app.secret_key = 'kros'
 
 
 @app.route('/')
-def index():
-    return render_template('index.html')
-
-
-@app.route('/leia', methods=['POST', 'GET'])
-def leia():
-    try:
-        acao = request.form['acao']
-        if acao == 'leitura':
-            pass
-        else:
-            contents_text.append(request.form['resposta'])
-        random.shuffle(contents_text)
-        random.shuffle(contents_tipo)
-    except BlockingIOError:
-        #   except estranha
-        pass
-
-    return render_template(
-        'leia.html',
-        titulo='Lista de kros',
-        contents=contents_text,
-        tipo=contents_tipo,
-        datas=len(lista.headers)
-    )
-
-
-@app.route('/randomaster')
 def randomaster():
     return render_template(
         'randomaster_form.html',
@@ -88,7 +60,6 @@ def randomaster():
         contents=lista.contents,
         datas=len(lista.headers)
     )
-
 
 @app.route('/equipe', methods=['POST'])
 def equipe():
