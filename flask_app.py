@@ -7,7 +7,7 @@ from listakros import ListKros
 from times import TimePadrao, EternalPadrao, EternalUm, EternalDois, EternalTres, TimeSeason
 
 # PythonAnywhere -> descomentar e comentar as linhas de baixo
-#  lista = ListKros('/home/felipedacs/mysite/static', 'krosmaster')
+#  lista = ListKros('/home/ceife/mysite/static', 'krosmaster')
 lista = ListKros('static', 'krosmaster')
 
 backgrounds = ['pattern1', 'pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6', 'pattern7', 'pattern8', 'pattern9', 'pattern10', 'pattern11']
