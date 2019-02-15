@@ -1,5 +1,3 @@
-#  equipe.html: http://felipedacs.pythonanywhere.com/randomaster
-
 from flask import Flask, render_template, request, flash
 import random
 
