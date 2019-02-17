@@ -1,8 +1,7 @@
 {% extends "template.html" %}
 {% block conteudo %}
 <div class="form-group">
-	<!--http://ceife.pythonanywhere.com/randomaster-->
-	<a href="http://127.0.0.1:5000/randomaster" class="btn btn-warning btn-lg"><i class="fas fa-arrow-circle-left"></i> Voltar</a>
+	<a href="{{url_for('index')}}" class="btn btn-warning btn-lg"><i class="fas fa-arrow-circle-left"></i> Voltar</a>
 	<button class="btn btn-danger btn-lg" id="btn-refresh"><i class="fas fa-sync-alt"></i> Nova Randomização</button>
 </div>
 

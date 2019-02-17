@@ -4,14 +4,9 @@ import random
 from listakros import ListKros
 from times import TimePadrao, EternalPadrao, EternalUm, EternalDois, EternalTres, TimeSeason
 
-# PythonAnywhere -> descomentar e comentar as linhas de baixo
-#  lista = ListKros('/home/ceife/mysite/static', 'krosmaster')
 lista = ListKros('static', 'krosmaster')
 
 backgrounds = ['pattern1', 'pattern2', 'pattern3', 'pattern4', 'pattern5', 'pattern6', 'pattern7', 'pattern8', 'pattern9', 'pattern10', 'pattern11']
-
-contents_text = ['first']
-contents_tipo = ['success', 'info', 'warning', 'danger', 'primary', 'secondary']
 
 
 def escrever_auditoria(msg, auditoria):
@@ -49,7 +44,7 @@ app.secret_key = 'kros'
 
 
 @app.route('/')
-def randomaster():
+def index():
     return render_template(
         'randomaster_form.html',
         titulo='Lista de kros',
@@ -120,7 +115,5 @@ def equipe():
         background=backgrounds
     )
 
-# PythonAnywhere => comentar linha abaixo
-app.run(debug=True)
-
-#  app.run(port=8080)
+if __name__ == '__main__':
+    app.run(debug=True)<Paste>

@@ -1,12 +1,13 @@
 import csv
-
+import os
 
 class ListKros:
     __headers = []
     __contents = []
 
     def __init__(self, dir, filename):
-        self.__dir = dir
+        current = os.path.dirname(os.path.abspath(__file__))
+        self.__dir = currentDir + '/' + dir
         self.__filename = filename
 
         self.__cria_list()
